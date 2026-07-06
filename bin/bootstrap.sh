@@ -110,10 +110,9 @@ if ! { command -v php && [ $(php -r 'echo PHP_VERSION;') = "$php_version" ]; }; 
     ./buildconf --force
     ./configure --enable-pcntl --enable-sockets --with-openssl --with-readline \
          --without-pear --with-zlib --enable-soap --enable-bcmath \
-         --enable-mbstring --enable-opcache --enable-debug \
-         --enable-gd --with-webp --with-jpeg --with-freetype \
-         --with-apxs2=$httpd_root/bin/apxs --with-ffi --disable-session \
-         --disable-fileinfo
+         --enable-mbstring --enable-debug --enable-gd --with-webp --with-jpeg \
+         --with-freetype --with-apxs2=$httpd_root/bin/apxs --with-ffi \
+         --disable-session --disable-fileinfo
     make
     make install
     popd
